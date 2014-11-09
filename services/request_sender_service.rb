@@ -9,7 +9,7 @@ class RequestSenderService
   end
 
   def self.build_request_with_authorization_header(uri, payload)
-    request = Net::HTTP::Post.new(uri.path, { 'Authorization' => AUTH_SECRET })
+    request      = Net::HTTP::Post.new(uri.path, { 'Authorization' => AUTH_SECRET })
     request.body = URI::encode_www_form(payload)
     request
   end
